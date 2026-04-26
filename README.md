@@ -119,5 +119,6 @@ The investigation indicates that the activity is consistent with:
 ---
 
 📎 Author
+  NASIRU IBRAHIM
 
 Cybersecurity enthusiast building SOC and threat detection skills through hands-on labs and real-world simulations.
