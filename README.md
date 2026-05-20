@@ -1,12 +1,12 @@
-🔍 Microsoft Sentinel Incident Investigation – Suspicious Sign-in Attempts
+ Microsoft Sentinel Incident Investigation – Suspicious Sign-in Attempts
 
-📌 Overview
+ Overview
 
 This project documents a real-world security investigation conducted using Microsoft Sentinel. My focus on this investigation was on suspicious sign-in attempts targeting disabled accounts from an external IP address.
 
 ---
 
-🚨 Incident Summary
+ Incident Summary
 
 - Incident Type: Suspicious Sign-in Activity
 - Alert: Sign-ins from IPs attempting access to disabled accounts
@@ -15,7 +15,7 @@ This project documents a real-world security investigation conducted using Micro
 
 ---
 
-🖥️ Environment
+ Environment
 
 - SIEM: Microsoft Sentinel
 - Log Source: Azure Active Directory
@@ -27,13 +27,13 @@ This project documents a real-world security investigation conducted using Micro
 
 ---
 
-🌐 IP Investigation
+ IP Investigation
 
-🔹 Source IP Analysis
+ Source IP Analysis
 
 The suspicious activity originated from an external IP address identified during the incident.
 
-🔹 WHOIS Findings
+ WHOIS Findings
 
 - IP Range: 147.45.128.0 – 147.45.191.255
 - Subnet: 147.45.176.0/24
@@ -49,7 +49,7 @@ The IP belongs to a sub-allocated network, indicating it may be part of rented o
 
 ---
 
-🧠 Investigation Findings
+ Investigation Findings
 
 - Multiple sign-in attempts were detected from a single IP
 - Targeted accounts were disabled accounts
@@ -58,21 +58,21 @@ The IP belongs to a sub-allocated network, indicating it may be part of rented o
 
 ---
 
-🔍 Log Analysis (KQL)
+ Log Analysis (KQL)
 
 SigninLogs
-| where IPAddress startswith "147.45."
-| summarize AttemptCount = count() by IPAddress, bin(TimeGenerated, 1h)
-| sort by AttemptCount desc
+ where IPAddress startswith "147.45."
+ summarize AttemptCount = count() by IPAddress, bin(TimeGenerated, 1h)
+ sort by AttemptCount desc
 
-📊 Outcome:
+ Outcome:
 
 - Confirmed repeated login attempts from same IP range
 - Identified potential infrastructure reuse
 
 ---
 
-🛡️ Threat Intelligence
+ Threat Intelligence
 
 - External checks performed using VirusTotal and AbuseIPDB
 - Indicators suggest potential malicious or suspicious behavior
@@ -81,7 +81,7 @@ SigninLogs
 
 ---
 
-⚠️ Important Note
+ Important Note
 
 Geolocation indicates Russia; however:
 
@@ -89,7 +89,7 @@ Geolocation indicates Russia; however:
 
 ---
 
-📌 Conclusion
+ Conclusion
 
 The investigation indicates that the activity is consistent with:
 
@@ -99,7 +99,7 @@ The investigation indicates that the activity is consistent with:
 
 ---
 
-✅ Recommendations
+ Recommendations
 
 - Block or monitor the identified IP and subnet
 - Enable Multi-Factor Authentication (MFA)
@@ -108,7 +108,7 @@ The investigation indicates that the activity is consistent with:
 
 ---
 
-🚀 Skills Demonstrated
+ Skills Demonstrated
 
 - SIEM Investigation (Microsoft Sentinel)
 - Log Analysis (KQL)
@@ -118,7 +118,7 @@ The investigation indicates that the activity is consistent with:
 
 ---
 
-📎 Author
-  NASIRU IBRAHIM
+ Author
+NASIRU IBRAHIM
 
 Cybersecurity enthusiast building SOC and threat detection skills through hands-on labs and real-world simulations.
